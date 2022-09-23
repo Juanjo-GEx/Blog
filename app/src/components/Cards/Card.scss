@@ -1,0 +1,28 @@
+@use '../../styles/utils/mixins' as mx;
+@use '../../styles/utils/functions' as fn;
+
+/* Card */
+.Card {    
+    height: fn.pxTorem(300px);
+    width: fn.pxTorem(350px);
+    overflow: hidden;
+    background-color: var(--color-background-secondary);
+    border-radius: 10px;
+
+    &-image {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: fn.pxTorem(120px);
+    }
+
+    &-container {
+        @include mx.createFlex(column,
+                                flex-start,
+                                flex-start){
+            gap: fn.pxTorem(8px);
+        };  
+        padding: fn.pxTorem(16px);
+        background-color: var(--color-background-secondary);
+    }
+}

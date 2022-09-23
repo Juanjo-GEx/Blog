@@ -1,0 +1,25 @@
+@use '../../styles/utils/mixins' as mx;
+@use '../../styles/utils/functions' as fn;
+
+/* Avatar */
+.Avatar {
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+
+    &-large {
+        width: fn.pxTorem(200px);
+        height: fn.pxTorem(200px);
+    }
+
+    &-medium {
+        width: fn.pxTorem(100px);
+        height: fn.pxTorem(100px);
+    }
+
+    &-small {
+        width: fn.pxTorem(50px);
+        height: fn.pxTorem(50px);
+    }
+}

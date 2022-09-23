@@ -1,0 +1,76 @@
+@use 'functions' as fn;
+@use 'sass:map';
+
+//1-VARIABLES
+// Colores
+$palette: (
+    'color-primary': #4071ca,
+    'color-secondary': #98d224,
+    'color-background-primary': #fff,
+    'color-background-secondary': #f0f0f0,
+    'color-title': #333,
+    'color-subtitle': #777,
+    'color-text': #8a8d94
+);
+// Tipografía
+$font-size-default: fn.pxTorem(16px);
+$typography: (    
+    'font-family': ('Raleway', sans-serif),
+    'font-size': (
+        'xxl': fn.changeSizeFont($font-size-default, 100, increase),
+        'xl': fn.changeSizeFont($font-size-default, 50, increase),
+        'l': fn.changeSizeFont($font-size-default, 20, increase),
+        'm': $font-size-default,
+        's': fn.changeSizeFont($font-size-default, 20, decrease),
+        'xs': fn.changeSizeFont($font-size-default, 50, decrease)
+    )    
+);
+// Media queries
+$breakpoints: (
+    'xxlarge': 1440px,
+    'xlarge': 1200px,
+    'large': 992px,
+    'medium': 768px,
+    'small': 596px,
+    'xsmall': 0
+);
+// Imágenes
+$images: (
+    'header-background': '../images/background.webp'
+);
+//2-MAPEO
+@function getColor($color) {   
+    @return map.get($palette, $color);
+}
+@function getTypography($property) {   
+    @if($property == 'font-family'){
+        @return map.get($typography, $property);
+    } @else{        
+        @return map.get(map.get($typography, 'font-size'), $property);
+    }
+}
+@function getImageURL($image) {   
+    @return map.get($images, $image);
+}
+@function getMedia($media) {   
+    @return map.get($breakpoints, $media);
+}
+//3-CUSTOM PROPERTIES
+:root {
+    // Colores
+    --color-primary: #{getColor('color-primary')};
+    --color-secondary: #{getColor('color-secondary')};
+    --color-background-primary: #{getColor('color-background-primary')};
+    --color-background-secondary: #{getColor('color-background-secondary')};
+    --color-title: #{getColor('color-title')};
+    --color-subtitle: #{getColor('color-subtitle')};
+    --color-text: #{getColor('color-text')};
+    // Tipografía
+    --font-family: #{getTypography('font-family')};
+    --font-size-xxl: #{getTypography('xxl')};
+    --font-size-xl: #{getTypography('xl')};
+    --font-size-l: #{getTypography('l')};
+    --font-size-m: #{getTypography('m')};
+    --font-size-s: #{getTypography('s')};
+    --font-size-xs: #{getTypography('xs')};
+}

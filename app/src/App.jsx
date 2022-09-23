@@ -1,12 +1,14 @@
-import { Fragment } from "react"
+import { QueryClientProvider, QueryClient} from '@tanstack/react-query'
 import { Outlet } from 'react-router-dom'
+
+const queryClient = new QueryClient();
 
 const App = () => {
 
   return (
-    <Fragment>
+    <QueryClientProvider client={queryClient}> 
       <Outlet />
-    </Fragment>
+    </QueryClientProvider>
   )
 }
 

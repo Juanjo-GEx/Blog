@@ -1,0 +1,30 @@
+@use '../utils/mixins' as mx;
+@use '../utils/functions' as fn;
+
+/* Global */
+body {
+    @include mx.createFlex(column,
+                            flex-start,
+                            flex-start);
+    font-family: var(--font-family);
+    font-size: var(--font-size-m);
+    background-color: var(--color-background-primary);
+    min-height: 100vh;
+    min-width: fn.pxTorem(320px); 
+}
+h1 {
+    color: var(--color-title);
+}
+h2, h3, h4, h5, h6 {
+    color: var(--color-subtitle);
+}
+p {
+    color: var(--color-text);
+}
+a {
+    color: var(--color-primary);
+}
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-background-primary);
+}

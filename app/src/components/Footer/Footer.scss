@@ -1,0 +1,21 @@
+@use '../../styles/utils/mixins' as mx;
+@use '../../styles/utils/functions' as fn;
+
+/* Footer */
+.Footer {
+    @include mx.createFlex(row,
+                            center,
+                            center){
+        gap: fn.pxTorem(16px);
+        height: fn.pxTorem(100px);
+    };    
+    padding: 0 fn.pxTorem(50px);
+    background-color: var(--color-background-primary);
+    color: var(--color-title);
+    border-top: 1px solid black;
+    
+    b {
+        font-weight: bold;
+        color: var(--color-primary);
+    }
+}

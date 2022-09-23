@@ -1,0 +1,23 @@
+@use '../../styles/utils/mixins' as mx;
+@use '../../styles/utils/functions' as fn;
+
+/* Button */
+.Button {
+    display: inline-block;
+    padding: fn.pxTorem(8px) fn.pxTorem(16px);
+    font-size: fn.pxTorem(16px);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &-primary {
+        background-color: var(--color-primary);
+    }
+
+    &-secondary {
+        background-color: var(--color-secondary);
+    }
+}

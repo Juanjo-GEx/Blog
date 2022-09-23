@@ -1,0 +1,38 @@
+@use '../../styles/utils/mixins' as mx;
+@use '../../styles/utils/functions' as fn;
+
+/* Header */
+.Header {
+    width: 100%;
+    max-height: fn.pxTorem(300px);
+    background-color: var(--color-background-secondary);
+
+    &-menu {
+        @include mx.createFlex(row,
+                                space-between,
+                                center);
+        padding: fn.pxTorem(16px) fn.pxTorem(50px)
+    }
+
+    &-img {
+        max-height: fn.pxTorem(80px);
+    }
+
+    &-nav {
+        @include mx.createFlex(row,
+                                center,
+                                center);
+        font-weight: bold;
+        color: var(--color-primary);
+    }
+
+    &-item {
+        border-right: 1px solid var(--color-primary);
+        padding: 0 fn.pxTorem(16px);
+
+        &:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+    }
+}
