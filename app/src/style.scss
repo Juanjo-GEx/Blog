@@ -17,6 +17,8 @@
 
 // Views
 @forward './views/Home/Home';
+@forward './views/Post/Post';
+@forward './views/User/User';
 
 // App
 @forward './App';

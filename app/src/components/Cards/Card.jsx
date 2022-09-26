@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom"
 import Button from '../Button'
 const Card = (props) => {
-    const {image, title, body, url, buttonText} = props;
+    const {image, title, body, slug, userId, color, buttonText} = props;
 
     return (
         <article className="Card">
@@ -8,9 +9,17 @@ const Card = (props) => {
             <div className="Card-container">
                 <h2 className="Card-title">{title}</h2>
                 <p className="Card-text">{body}</p>
-                <a href={url}>
-                    <Button color='primary'>{buttonText}</Button>
-                </a>
+                <Link 
+                    to={`/posts/${slug}`}
+                    state={{
+                        userId,
+                        image,
+                        title,
+                        body,
+                    }}
+                >
+                    <Button color={color}>{buttonText}</Button>
+                </Link>
             </div>
         </article>
     )

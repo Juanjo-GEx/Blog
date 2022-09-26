@@ -2,6 +2,16 @@
 @use '../../styles/utils/functions' as fn;
 
 /* Card */
+.CardList {
+    padding: fn.pxTorem(50px) 0;
+
+    &-list {
+        @include mx.createGrid(50px,
+                                1fr,
+                                repeat(3, 1fr));
+    }
+    
+}
 .Card {    
     height: fn.pxTorem(300px);
     width: fn.pxTorem(350px);
@@ -25,4 +35,13 @@
         padding: fn.pxTorem(16px);
         background-color: var(--color-background-secondary);
     }
+
+    &-title,
+    &-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
 }
+

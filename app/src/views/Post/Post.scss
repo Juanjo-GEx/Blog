@@ -1,0 +1,49 @@
+@use '../../styles/utils/mixins' as mx;
+@use '../../styles/utils/functions' as fn;
+
+/* Post */
+.Post {   
+    @include mx.createFlex(column,
+                            flex-start,
+                            flex-start);
+
+    &-image{
+        @include mx.createFlex(column,
+                                center,
+                                center){
+            height: fn.pxTorem(250px);
+        }; 
+        padding: 0 fn.pxTorem(50px);           
+        background-position:center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &-title {
+        color: var(--color-background-primary)
+    }
+
+    &-main{
+        @include mx.createFlex(column,
+                                flex-start,
+                                flex-start); 
+        padding: fn.pxTorem(50px); 
+    }
+
+    &-author {
+        @include mx.createFlex(row,
+                                flex-start,
+                                center){
+            gap: fn.pxTorem(16px) 
+        }; 
+    }
+
+    &-container {
+        @include mx.createFlex(column,
+                                flex-start,
+                                flex-start){
+            gap: fn.pxTorem(16px);
+        }; 
+        padding: fn.pxTorem(30px) 0;
+    }
+}

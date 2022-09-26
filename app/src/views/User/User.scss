@@ -1,0 +1,35 @@
+@use '../../styles/utils/mixins' as mx;
+@use '../../styles/utils/functions' as fn;
+
+/* User */
+.User {
+    @include mx.createFlex(column,
+                            flex-start,
+                            flex-start);
+    padding: fn.pxTorem(50px); 
+
+    &-header {
+        @include mx.createFlex(row,
+                            flex-start,
+                            center){
+            gap: fn.pxTorem(30px);
+        };
+        padding-bottom: fn.pxTorem(50px);
+    }
+
+    &-details {
+        @include mx.createFlex(column,
+                            flex-start,
+                            flex-start){
+            gap: fn.pxTorem(16px);
+        };
+    }
+
+    &-name {
+        font-size: var(--font-size-xxl);
+    }
+
+    &-email {
+        font-size: var(--font-size-xl);
+    }
+}

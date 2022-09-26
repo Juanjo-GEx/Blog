@@ -3,8 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import { getData } from '../../services/fetchData';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header';
-import Card from '../../components/Cards/Card';
-import logo from '../../public/favicon.png'
+import CardList from '../../components/Cards/CardList';
 
 const Home = () => {
 
@@ -30,7 +29,7 @@ const Home = () => {
               )
             )
         }
-        <Card image={logo} title='Título' body='Cuerpo' url='#' buttonText='Leer más'></Card>
+        <CardList />        
       </main>
       <Footer />
     </Fragment>
