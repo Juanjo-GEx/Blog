@@ -8,7 +8,6 @@ import Header from "../../components/Header"
 const UserDetails = () => {
 
   const location = useLocation();
-  console.log(location.state)
 
   return (
     <Fragment>

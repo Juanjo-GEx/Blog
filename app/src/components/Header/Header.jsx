@@ -1,4 +1,5 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query';
+import { Link } from "react-router-dom";
 import { getData, getFile } from "../../services/fetchData";
 
 
@@ -12,16 +13,17 @@ const Header = () => {
     return (
         <header className="Header">
             <div className="Header-menu">
-                { isSuccessFiles  
-                    ? (<img 
-                        className="Header-img" 
-                        src={`${directusUrl}assets/${files.id}`} 
-                        alt="Logotipo Global Exchange" 
-                        title="Logotipo Global Exchange" />
-                    )
-                    : (<p>Error al procesar la imagen</p>)
-                } 
-                <p></p>               
+                <Link to="/">
+                    { isSuccessFiles  
+                        ? (<img 
+                            className="Header-img" 
+                            src={`${directusUrl}assets/${files.id}`} 
+                            alt="Logotipo Global Exchange" 
+                            title="Logotipo Global Exchange" />
+                        )
+                        : (<p>Error al procesar la imagen</p>)
+                    }  
+                </Link>                             
                 <nav>
                     <ul className="Header-nav">
                         { isSuccessMenus && 

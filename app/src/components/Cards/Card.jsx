@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 import Button from '../Button'
 const Card = (props) => {
-    const {image, title, body, slug, userId, color, buttonText} = props;
-
+    const {image, title, body, slug='#', userId=1, color='primary', buttonText='Leer más', comments=[]} = props;
+    
     return (
         <article className="Card">
             <img src={image} width="385" height="385" alt="Testing blog" className="Card-image" />
@@ -16,6 +16,7 @@ const Card = (props) => {
                         image,
                         title,
                         body,
+                        comments
                     }}
                 >
                     <Button color={color}>{buttonText}</Button>

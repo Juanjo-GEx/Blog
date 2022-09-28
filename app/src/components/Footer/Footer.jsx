@@ -6,7 +6,6 @@ const Footer = () => {
     
     const { data: texts, isSuccess} = useQuery(["texts"], async () => await getData('texts')); 
 
-    console.log(texts)
     return (
         <footer className="Footer">
             { isSuccess && 

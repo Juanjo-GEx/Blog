@@ -9,3 +9,13 @@ export const filterData = async (collection, key) => {
   }
   return data;
 }
+
+export const filterDatas = async (collection, keys) => {  
+  
+  const data = await directus.items(collection).readMany(keys);
+  
+  if(!data || data?.length === 0) {
+      throw new Error(`No existen ${collection} para mostrar`)
+  }
+  return data.data;
+}

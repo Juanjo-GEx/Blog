@@ -1,0 +1,30 @@
+@use '../../styles/utils/mixins' as mx;
+@use '../../styles/utils/functions' as fn;
+
+/* Comments */
+.Comments {
+    border-top: 1px solid var(--color-title);
+    padding: 0 fn.pxTorem(30px);
+
+    &-article{
+        @include mx.createFlex(row,
+                                flex-start,
+                                flex-start){
+            gap: fn.pxTorem(8px);
+        };
+        padding: fn.pxTorem(30px) 0;
+        border-bottom: 1px solid var(--color-text);
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &-comment {
+        width: 100%;
+    }
+
+    &-title {
+        padding-bottom: fn.pxTorem(8px)
+    }
+}

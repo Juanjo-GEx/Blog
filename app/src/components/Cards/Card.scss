@@ -6,15 +6,14 @@
     padding: fn.pxTorem(50px) 0;
 
     &-list {
-        @include mx.createGrid(50px,
+        @include mx.createGrid(24px,
                                 1fr,
-                                repeat(3, 1fr));
+                                repeat(auto-fill, minmax(fn.pxTorem(350px), 1fr)))
     }
     
 }
 .Card {    
     height: fn.pxTorem(300px);
-    width: fn.pxTorem(350px);
     overflow: hidden;
     background-color: var(--color-background-secondary);
     border-radius: 10px;
